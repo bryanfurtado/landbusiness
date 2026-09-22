@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Land Business | Real Estate Development & Advisory</title>
+
+  <meta name="description" content="Land Business — inteligência, engenharia e segurança jurídica na estruturação de oportunidades imobiliárias.">
+  <meta name="theme-color" content="#11110f">
+
+  <style>
+    :root {
+      --preto: #11110f;
+      --preto-2: #191816;
+      --bronze: #b88a5a;
+      --bronze-claro: #d1aa7a;
+      --offwhite: #f2efe9;
+      --branco: #ffffff;
+      --cinza: #bcb8b1;
+      --linha: rgba(184,138,90,.42);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--preto);
+      color: var(--branco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: 0 auto;
+    }
+
+    /* MENU */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(13,13,12,.90);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    nav {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      letter-spacing: 4px;
+      font-weight: 400;
+    }
+
+    .brand-name span {
+      color: var(--bronze-claro);
+    }
+
+    .brand-sub {
+      margin-top: 9px;
+      color: #aaa69f;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+      font-size: 11px;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .menu a {
+      transition: .25s;
+    }
+
+    .menu a:hover {
+      color: var(--bronze-claro);
+    }
+
+    .menu-cta {
+      border: 1px solid var(--bronze);
+      padding: 12px 17px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 88px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(184,138,90,.17), transparent 32%),
+        linear-gradient(90deg, #0d0d0c 0%, #151411 55%, #282119 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+      background-image:
+        repeating-radial-gradient(
+          ellipse at 0 50%,
+          transparent 0 34px,
+          rgba(184,138,90,.23) 35px 36px
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 810px;
+      padding: 90px 0 80px;
+    }
+
+    .eyebrow {
+      color: var(--bronze-claro);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 11px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 6vw, 86px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: var(--bronze-claro);
+    }
+
+    .hero-text {
+      max-width: 680px;
+      color: #d4d0ca;
+      font-size: 18px;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 25px;
+      border: 1px solid var(--bronze);
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 11px;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--bronze);
+      color: #111;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--bronze-claro);
+      color: #111;
+    }
+
+    /* EXPERTISE */
+
+    .expertise {
+      background: var(--offwhite);
+      color: var(--preto);
+      padding: 45px 0;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .expertise-item {
+      padding: 12px 25px;
+      text-align: center;
+      border-right: 1px solid #cfc8bd;
+    }
+
+    .expertise-item:last-child {
+      border-right: none;
+    }
+
+    .expertise-icon {
+      color: var(--bronze);
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .expertise-item h3 {
+      font-size: 13px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .expertise-item p {
+      font-size: 11px;
+      color: #5f5b55;
+      letter-spacing: .5px;
+    }
+
+    /* INTRO */
+
+    .intro {
+      background: #161513;
+      padding: 100px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 4vw, 58px);
+      font-weight: 400;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 2px;
+      background: var(--bronze);
+      margin: 25px 0;
+    }
+
+    .intro-copy {
+      color: #cbc7c0;
+      font-size: 16px;
+    }
+
+    .intro-copy p + p {
+      margin-top: 18px;
+    }
+
+    .highlight {
+      margin-top: 30px;
+      color: var(--bronze-claro);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    /* PROCESSO */
+
+    .process {
+      background: var(--offwhite);
+      color: var(--preto);
+      padding: 100px 0;
+    }
+
+    .process-header {
+      max-width: 720px;
+      margin-bottom: 55px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      border-top: 1px solid var(--bronze);
+      padding-top: 20px;
+    }
+
+    .step-number {
+      color: var(--bronze);
+      font-family: Georgia, serif;
+      font-size: 30px;
+    }
+
+    .step h3 {
+      margin: 10px 0;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .step p {
+      color: #625e57;
+      font-size: 13px;
+    }
+
+    /* SÓCIOS */
+
+    .partners {
+      padding: 100px 0;
+      background: #11110f;
+    }
+
+    .partners-header {
+      margin-bottom: 50px;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .partner {
+      min-height: 420px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.96), rgba(0,0,0,.15)),
+        linear-gradient(135deg, #34312d, #171614);
+    }
+
+    .partner h3 {
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .partner-role {
+      color: var(--bronze-claro);
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin: 8px 0;
+    }
+
+    .partner p {
+      color: #c8c3bb;
+      font-size: 13px;
+    }
+
+    /* DOIS PÚBLICOS */
+
+    .audiences {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .audience {
+      min-height: 440px;
+      padding: 70px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .audience:first-child {
+      background: var(--offwhite);
+      color: var(--preto);
+    }
+
+    .audience:last-child {
+      background: #26211b;
+    }
+
+    .audience h2 {
+      font-family: Georgia, serif;
+      font-size: 40px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .audience p {
+      max-width: 520px;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 0;
+      border-top: 1px solid var(--linha);
+      background: #0c0c0b;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-text {
+      color: #9d9992;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 900px) {
+      .menu {
+        display: none;
+      }
+
+      nav {
+        min-height: 75px;
+      }
+
+      .hero {
+        padding-top: 75px;
+      }
+
+      .hero-content {
+        padding: 70px 0;
+      }
+
+      .expertise-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-item {
+        border-right: none;
+        border-bottom: 1px solid #d6d0c7;
+        padding: 25px 10px;
+      }
+
+      .intro-grid,
+      .partners-grid,
+      .audiences {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-grid {
+        gap: 35px;
+      }
+
+      .partner {
+        min-height: 350px;
+      }
+
+      .audience {
+        min-height: auto;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="brand">
+        <div class="brand-name">LAND <span>BUSINESS</span></div>
+        <div class="brand-sub">Real Estate Development & Advisory</div>
+      </a>
+
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">A Land Business</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#oportunidades">Oportunidades</a></li>
+        <li><a href="#socios">Sócios</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a class="menu-cta" href="#apresente">Apresente sua área</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          Estratégia · Planejamento · Desenvolvimento
+        </div>
+
+        <h1>
+          Inteligência que transforma
+          <span>terras em negócios.</span>
+        </h1>
+
+        <p class="hero-text">
+          Identificamos, analisamos e estruturamos oportunidades imobiliárias,
+          conectando proprietários de áreas, investidores, incorporadoras,
+          loteadoras e desenvolvedores.
+        </p>
+
+        <div class="buttons">
+          <a href="#oportunidades" class="btn btn-primary">
+            Conheça nossas oportunidades
+          </a>
+
+          <a href="#apresente" class="btn">
+            Apresente sua área
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="expertise" id="expertise">
+    <div class="container expertise-grid">
+
+      <div class="expertise-item">
+        <div class="expertise-icon">◇</div>
+        <h3>Land Banking</h3>
+        <p>Prospecção e originação de áreas estratégicas.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">▥</div>
+        <h3>Estudos de Viabilidade</h3>
+        <p>Potencial, cenários e indicadores do negócio.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">△</div>
+        <h3>Engenharia & Desenvolvimento</h3>
+        <p>Análise técnica e suporte ao desenvolvimento.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">▤</div>
+        <h3>Jurídico Imobiliário</h3>
+        <p>Due diligence, estruturação e segurança jurídica.</p>
+      </div>
+
+      <div class="expertise-item">
+        <div class="expertise-icon">◎</div>
+        <h3>Conexão com Investidores</h3>
+        <p>Incorporadoras, loteadoras e desenvolvedores.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="intro" id="sobre">
+    <div class="container intro-grid">
+
+      <div>
+        <h2 class="section-title">
+          Visão que transforma territórios.
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <div class="eyebrow">
+          Do potencial ao desenvolvimento.
+        </div>
+      </div>
+
+      <div class="intro-copy">
+        <p>
+          A LAND BUSINESS é uma empresa especializada na originação,
+          análise e estruturação de oportunidades para o mercado imobiliário.
+        </p>
+
+        <p>
+          Nossa atuação integra Land Banking, Engenharia e Direito Imobiliário,
+          permitindo uma visão multidisciplinar sobre cada ativo.
+        </p>
+
+        <p>
+          Mais do que aproximar proprietários e compradores, buscamos compreender
+          a vocação de cada área, identificar seu potencial e estruturar informações
+          para apoiar decisões de incorporadoras, loteadoras, investidores e
+          desenvolvedores.
+        </p>
+
+        <div class="highlight">
+          Mais que áreas. Oportunidades reais.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="process">
+    <div class="container">
+
+      <div class="process-header">
+        <div class="eyebrow">Nossa atuação</div>
+        <h2 class="section-title">Da terra à oportunidade.</h2>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Identificar</h3>
+          <p>Prospecção e originação de áreas.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Analisar</h3>
+          <p>Análise imobiliária, documental, urbanística e técnica.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Estruturar</h3>
+          <p>Organização da oportunidade e construção do material estratégico.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>Conectar</h3>
+          <p>Apresentação direcionada a investidores e desenvolvedores.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">05</div>
+          <h3>Negociar</h3>
+          <p>Acompanhamento estratégico durante o processo de negociação.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="partners" id="socios">
+    <div class="container">
+
+      <div class="partners-header">
+        <div class="eyebrow">Sócios</div>
+        <h2 class="section-title">
+          Experiência complementar.<br>
+          Visão integrada.
+        </h2>
+      </div>
+
+      <div class="partners-grid">
+
+        <article class="partner">
+          <div>
+            <h3>Bryan Furtado</h3>
+            <div class="partner-role">
+              Land Banking & Business Development
+            </div>
+            <p>
+              Prospecção, originação, análise comercial e negociação
+              de áreas e oportunidades imobiliárias.
+            </p>
+          </div>
+        </article>
+
+        <article class="partner">
+          <div>
+            <h3>Guttemberg Teixeira</h3>
+            <div class="partner-role">
+              Engineering & Real Estate Development
+            </div>
+            <p>
+              Engenharia, construção, análise técnica e
+              desenvolvimento imobiliário.
+            </p>
+          </div>
+        </article>
+
+        <article class="partner">
+          <div>
+            <h3>Talitha Martinez</h3>
+            <div class="partner-role">
+              Real Estate Law & Legal Advisory
+            </div>
+            <p>
+              Direito Imobiliário, due diligence,
+              estruturação jurídica e segurança negocial.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="audiences">
+
+    <div class="audience" id="apresente">
+      <div class="eyebrow">Proprietários</div>
+
+      <h2>Você possui uma área?</h2>
+
+      <p>
+        Analisamos oportunidades com potencial para incorporação,
+        loteamento e desenvolvimento imobiliário.
+      </p>
+
+      <div>
+        <a href="#contato" class="btn btn-primary">
+          Apresente sua área
+        </a>
+      </div>
+    </div>
+
+
+    <div class="audience" id="oportunidades">
+      <div class="eyebrow">Investidores & Desenvolvedores</div>
+
+      <h2>Busca novas oportunidades?</h2>
+
+      <p>
+        Conheça nosso portfólio de áreas e ativos direcionados a
+        incorporadoras, loteadoras, investidores e desenvolvedores.
+      </p>
+
+      <div>
+        <a href="#contato" class="btn">
+          Acesse o portfólio
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer id="contato">
+  <div class="container footer-grid">
+
+    <div class="brand">
+      <div class="brand-name">LAND <span>BUSINESS</span></div>
+      <div class="brand-sub">Real Estate Development & Advisory</div>
+    </div>
+
+    <div class="footer-text">
+      Inteligência que transforma terras em negócios.
+    </div>
+
+    <div class="footer-text">
+      landbusiness.com.br
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
