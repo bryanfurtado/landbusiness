@@ -366,24 +366,38 @@
       gap: 25px;
     }
 
-    .partner {
-      min-height: 420px;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 28px;
-      border: 1px solid rgba(255,255,255,.10);
-      background:
-        linear-gradient(0deg, rgba(0,0,0,.96), rgba(0,0,0,.15)),
-        linear-gradient(135deg, #34312d, #171614);
-    }
+   .partner {
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,.10);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
 
-    .partner h3 {
-      font-size: 18px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+   .partner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.92) 0%,
+        rgba(0,0,0,.58) 23%,
+        rgba(0,0,0,.10) 52%,
+        rgba(0,0,0,0) 72%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
 
+.partner > * {
+    position: relative;
+    z-index: 2;
+}
     .partner-role {
       color: var(--bronze-claro);
       font-size: 11px;
@@ -706,7 +720,7 @@
 
       <div class="partners-grid">
 
-        <article class="partner">
+       <article class="partner" style="background-image: url('bryan-furtado.jpg.jpg');">
           <div>
             <h3>Bryan Furtado</h3>
             <div class="partner-role">
@@ -719,7 +733,7 @@
           </div>
         </article>
 
-        <article class="partner">
+      <article class="partner" style="background-image: url('guttemberg-teixeira.jpg.jpeg');">
           <div>
             <h3>Guttemberg Teixeira</h3>
             <div class="partner-role">
@@ -732,7 +746,7 @@
           </div>
         </article>
 
-        <article class="partner">
+     <article class="partner" style="background-image: url('talitha-martinez.jpg.jpeg');">
           <div>
             <h3>Talitha Martinez</h3>
             <div class="partner-role">
