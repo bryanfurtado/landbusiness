@@ -658,6 +658,214 @@ section[id] {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+    /* CONTATO */
+
+.contact {
+  background: var(--offwhite);
+  color: var(--preto);
+  padding: 90px 0;
+}
+
+.contact-header {
+  max-width: 850px;
+  margin-bottom: 60px;
+}
+
+.contact-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1.08;
+  margin: 18px 0 22px;
+}
+
+.contact-header p {
+  max-width: 760px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #55514b;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.contact-form-wrap {
+  padding: 40px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .10);
+}
+
+.contact-label {
+  color: var(--dourado);
+  font-size: 12px;
+  letter-spacing: .22em;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.form-field label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 15px 14px;
+  border: 1px solid #cbc6be;
+  background: #fff;
+  color: var(--preto);
+  font: inherit;
+  outline: none;
+  transition: border-color .25s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--dourado);
+}
+
+.privacy-check {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #625e58;
+  cursor: pointer;
+}
+
+.privacy-check input {
+  margin-top: 4px;
+  flex: 0 0 auto;
+}
+
+.contact-submit {
+  border: 1px solid var(--dourado);
+  background: var(--dourado);
+  color: var(--preto);
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.contact-info {
+  background: #171512;
+  color: #fff;
+  padding: 42px;
+}
+
+.contact-info-item {
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.contact-info-item:first-child {
+  padding-top: 0;
+}
+
+.contact-info-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-info-item > span {
+  display: block;
+  color: var(--dourado);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  margin-bottom: 10px;
+}
+
+.contact-info-item a,
+.contact-info-item p {
+  color: rgba(255, 255, 255, .82);
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.contact-info-item a:hover {
+  color: var(--dourado);
+}
+
+.contact-meeting h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 8px 0 15px;
+}
+
+.contact-meeting .btn {
+  display: inline-block;
+  margin-top: 22px;
+  color: #fff;
+}
+
+/* CONTATO - MOBILE */
+
+@media (max-width: 900px) {
+  .contact {
+    padding: 50px 0;
+  }
+
+  .contact-header {
+    margin-bottom: 35px;
+  }
+
+  .contact-header h2 {
+    font-size: 38px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-form-wrap,
+  .contact-info {
+    padding: 28px 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-submit {
+    width: 100%;
+  }
+}
   </style>
 </head>
 
@@ -948,8 +1156,137 @@ section[id] {
 
 </main>
 
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="container">
 
-<footer id="contato">
+    <div class="contact-header">
+      <div class="eyebrow">Entre em contato</div>
+      <h2>Entre em contato com nossos especialistas</h2>
+      <p>
+        Nossa equipe está à disposição para analisar oportunidades,
+        avaliar áreas e ativos imobiliários e apoiar proprietários,
+        investidores, incorporadoras e desenvolvedores na estruturação
+        de novos negócios.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-form-wrap">
+        <div class="contact-label">FALE COM A LAND BUSINESS</div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xwlpogzb"
+          method="POST"
+        >
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione uma opção</option>
+              <option value="Apresentar uma área">Apresentar uma área</option>
+              <option value="Oportunidades para investimento">Oportunidades para investimento</option>
+              <option value="Incorporação e desenvolvimento">Incorporação e desenvolvimento</option>
+              <option value="Assessoria imobiliária">Assessoria imobiliária</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+          </div>
+
+          <label class="privacy-check">
+            <input type="checkbox" name="privacidade" required>
+            <span>
+              Li e concordo com a Política de Privacidade e com o tratamento
+              dos dados enviados para atendimento desta solicitação.
+            </span>
+          </label>
+
+          <button type="submit" class="btn contact-submit">
+            ENVIAR MENSAGEM
+          </button>
+
+        </form>
+      </div>
+
+      <div class="contact-info">
+
+        <div class="contact-info-item">
+          <span>WHATSAPP</span>
+          <a
+            href="https://wa.me/5511997419221"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            (11) 99741-9221
+          </a>
+        </div>
+
+        <div class="contact-info-item">
+          <span>E-MAIL</span>
+          <a href="mailto:contato@landbusiness.com.br">
+            contato@landbusiness.com.br
+          </a>
+        </div>
+
+        <div class="contact-info-item">
+          <span>LOCALIZAÇÃO</span>
+          <p>Bragança Paulista/SP</p>
+        </div>
+
+        <div class="contact-info-item contact-meeting">
+          <span>ATENDIMENTO</span>
+          <h3>Agende uma reunião com nossos especialistas</h3>
+          <p>
+            Entre em contato para apresentar sua área, discutir uma
+            oportunidade ou conhecer melhor nossa atuação.
+          </p>
+
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/5511997419221"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            AGENDAR UM HORÁRIO
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer>
   <div class="container footer-grid">
 
     <div class="brand">
